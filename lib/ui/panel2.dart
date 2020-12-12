@@ -28,6 +28,7 @@ FijkPanelWidgetBuilder fijkPanel2Builder(
     final int duration = 4000,
     final bool doubleTap = true,
     final bool snapShot = false,
+    final bool hidePlayPause = false,
     final VoidCallback onBack}) {
   return (FijkPlayer player, FijkData data, BuildContext context, Size viewSize,
       Rect texturePos) {
@@ -42,6 +43,7 @@ FijkPanelWidgetBuilder fijkPanel2Builder(
       doubleTap: doubleTap,
       snapShot: snapShot,
       hideDuration: duration,
+      hidePlayPause: hidePlayPause,
     );
   };
 }
@@ -56,6 +58,7 @@ class _FijkPanel2 extends StatefulWidget {
   final bool doubleTap;
   final bool snapShot;
   final int hideDuration;
+  final bool hidePlayPause;
 
   const _FijkPanel2(
       {Key key,
@@ -67,7 +70,8 @@ class _FijkPanel2 extends StatefulWidget {
       this.hideDuration,
       this.doubleTap,
       this.snapShot,
-      this.texPos})
+      this.texPos,
+      this.hidePlayPause})
       : assert(player != null),
         assert(
             hideDuration != null && hideDuration > 0 && hideDuration < 10000),
@@ -373,7 +377,7 @@ class __FijkPanel2State extends State<_FijkPanel2> {
     if (_duration != null && _duration.inMilliseconds > 0) {
       return Row(
         children: <Widget>[
-          buildPlayButton(context, height),
+          widget.hidePlayPause ? Container() : buildPlayButton(context, height),
           buildTimeText(context, height),
           Expanded(child: buildSlider(context)),
           buildFullScreenButton(context, height),
