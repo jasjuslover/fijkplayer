@@ -386,7 +386,7 @@ class __FijkPanel2State extends State<_FijkPanel2> {
     } else {
       return Row(
         children: <Widget>[
-          buildPlayButton(context, height),
+          widget.hidePlayPause ? Container() : buildPlayButton(context, height),
           Expanded(child: Container()),
           buildFullScreenButton(context, height),
         ],
