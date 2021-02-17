@@ -319,19 +319,20 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
                               )
                             : (_prepared ||
                                     player.state == FijkState.initialized)
-                                ? AnimatedOpacity(
-                                    opacity: 0.0,
-                                    duration: Duration(milliseconds: 400),
-                                    child: IconButton(
-                                        iconSize: barHeight * 2,
-                                        icon: Icon(
-                                            _playing
-                                                ? Icons.pause
-                                                : Icons.play_arrow,
-                                            color: Colors.white),
-                                        padding: EdgeInsets.only(
-                                            left: 10.0, right: 10.0),
-                                        onPressed: _playOrPause))
+                                ? Container()
+                                // ? AnimatedOpacity(
+                                //     opacity: 0.0,
+                                //     duration: Duration(milliseconds: 400),
+                                //     child: IconButton(
+                                //         iconSize: barHeight * 2,
+                                //         icon: Icon(
+                                //             _playing
+                                //                 ? Icons.pause
+                                //                 : Icons.play_arrow,
+                                //             color: Colors.white),
+                                //         padding: EdgeInsets.only(
+                                //             left: 10.0, right: 10.0),
+                                //         onPressed: _playOrPause))
                                 : SizedBox(
                                     width: barHeight * 1.5,
                                     height: barHeight * 1.5,
