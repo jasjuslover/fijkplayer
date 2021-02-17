@@ -320,7 +320,7 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
                             : (_prepared ||
                                     player.state == FijkState.initialized)
                                 ? AnimatedOpacity(
-                                    opacity: _hideStuff ? 0.0 : 0.7,
+                                    opacity: 0.0,
                                     duration: Duration(milliseconds: 400),
                                     child: IconButton(
                                         iconSize: barHeight * 2,
